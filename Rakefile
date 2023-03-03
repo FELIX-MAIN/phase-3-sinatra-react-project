@@ -8,13 +8,19 @@ task :server do
     return
   end
 
-  # rackup -p PORT will run on the port specified (9292 by default)
-  ENV["PORT"] ||= "9292"
-  rackup = "rackup -p #{ENV['PORT']}"
+#   # rackup -p PORT will run on the port specified (9292 by default)
+#   ENV["PORT"] ||= "4567"
+#   rackup = "rackup -p #{ENV['PORT']}"
 
-  # rerun allows auto-reloading of server when files are updated
-  # -b runs in the background (include it or binding.pry won't work)
-  exec "bundle exec rerun -b '#{rackup}'"
+#   # rerun allows auto-reloading of server when files are updated
+#   # -b runs in the background (include it or binding.pry won't work)
+#   exec "bundle exec rerun -b '#{rackup}'"
+# end
+
+namespace :db do
+  task :load_config do
+    require "./server"
+  end
 end
 
 desc "Start the console"
