@@ -1,46 +1,45 @@
-class MiniaturesController < ApplicationController
+class RoomsController < ApplicationController
 
-    get '/miniatures' do
-        Miniature.order(:name).to_json(include: :miniature_set)
+    get '/rooms' do
+        Room.order(:name).to_json(include: :room_set)
     end
 
-    get '/miniatures/new' do
-        Miniature.last(6).to_json(include: :miniature_set)
+    get '/rooms/new' do
+        Room.last(6).to_json(include: :room_set)
     end
 
-    get '/miniatures/:id' do
-        @miniature = Miniature.find(params[:id])
-        @miniature.to_json(include: :miniature_set)
+    get '/rooms/:id' do
+        @room = Room.find(params[:id])
+        @room.to_json(include: :room_set)
     end
 
-    get '/miniature_sets/:miniature_set_id/miniatures' do
-        @miniature_set = MiniatureSet.find(params["miniature_set_id"])
-        @miniature_set.miniatures.to_json(include: miniature_set)
+    get '/room_sets/:room_set_id/rooms' do
+        @room_set = RoomSet.find(params["room_set_id"])
+        @room_set.rooms.to_json(include: room_set)
     end
 
-    post '/miniature_sets/:miniature_set_id/miniatures' do
-        @miniature_set = MiniatureSet.find(params["miniature_set_id"])
-        @miniature = @miniature_set.miniatures.build(params)
-        @miniature.save
-        @miniature.to_json
+    post '/room_sets/:room_set_id/rooms' do
+        @room_set = RoomSet.find(params["room_set_id"])
+        @room = @room_set.rooms.build(params)
+        @room.save
+        @room.to_json
     end
 
-    patch '/miniatures/:id' do
-        @miniature = Miniature.find(params[:id])
-        @miniature.update(
+    patch '/rooms/:id' do
+        @room = Room.find(params[:id])
+        @room.update(
             name: params[:name],
-            rarity: params[:rarity],
             size: params[:size],
             units: params[:units],
             img_url: params[:img_url]
             )
-        @miniature.to_json
+        @room.to_json
     end
 
-    delete '/miniatures/:id' do
-        @miniature = Miniature.find(params[:id])
-        @miniature.destroy
-        @miniature.to_json
+    delete '/rooms/:id' do
+        @room = Room.find(params[:id])
+        @room.destroy
+        @room.to_json
     end
 
 end
