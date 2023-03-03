@@ -10,11 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_03_131527) do
+ActiveRecord::Schema.define(version: 2023_03_03_131702) do
 
   create_table "room_sets", force: :cascade do |t|
     t.string "name"
     t.integer "year"
+  end
+
+  create_table "rooms", force: :cascade do |t|
+    t.string "name"
+    t.string "size"
+    t.integer "units"
+    t.integer "room_set_id"
+    t.string "img_url"
   end
 
 end
