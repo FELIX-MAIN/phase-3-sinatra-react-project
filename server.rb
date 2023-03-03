@@ -10,6 +10,3 @@ get '/' do
   "Ola"
 end
 
-post '/rooms' do
-  @room = Room.find_or_create_by(name: params[:name])
-end
