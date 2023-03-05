@@ -24,21 +24,21 @@ Room.create([
         size: "small",
         units: 3,
         room_set_id: 29,
-        img_url: "https://images.app.goo.gl/LhgC8SVUcZxLFZf37"
+        img_url: "https://photos.google.com/photo/AF1QipPd8zOdg8LU3psBE7hYISklFwDjU9fOuwwhcDn9"
     },
     {
         name: "Double",
         size: "Medium",
         units: 4,
         room_set_id: 27,
-        img_url: "https://images.app.goo.gl/A46PBSjL7EARnJ4t5"
+        img_url: "https://photos.google.com/photo/AF1QipOseohOwo2YU4aB1t9fEnDEGqyaP3pjOhyGjaXo"
     },
     {
         name: "Tripple",
         size: "Medium",
         units: 1,
         room_set_id: 46,
-        img_url: "https://images.app.goo.gl/zn7V5JtQPaFQ5xZYA"
+        img_url: "https://photos.google.com/photo/AF1QipMQQof-UGiTiB4GwHIPzey0rSdTj45StBjgE9Q2"
     }
 ])
 
